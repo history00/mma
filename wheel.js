@@ -38,7 +38,7 @@ class WheelOfFortune {
         this.rotationSpeed = 0;
         this.friction = 0.985;
         this.minSpeed = 0.05;
-        this.spinDuration = 2000;
+        this.spinDuration = 200;
         this.showWinnerDuration = 2000;
         this.spinStartTime = 0;
         
@@ -166,7 +166,7 @@ class WheelOfFortune {
         
         this.spinning = true;
         this.spinStartTime = Date.now();
-        this.rotationSpeed = 15 + Math.random() * 10;
+        this.rotationSpeed = 100 + Math.random() * 50;
         
         this.spinButton.style.display = 'none';
         
