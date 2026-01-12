@@ -3806,13 +3806,12 @@ paragraph_25: {
         }
     ]
 },
-    paragraph_27: {
+paragraph_27: {
     title: "§ 27. Вторая мировая война как рубежный период в истории Европы и мира",
     coverImage: "images/quiz_covers/ww2_cover.jpg",
     questions: [
         {
             question: "Какое название получил первый этап Второй мировой войны, когда активные боевые действия между Германией и западными союзниками почти не велись?",
-            type: "single",
             answers: [
                 "Позиционная война",
                 "Зимняя война",
@@ -3824,7 +3823,6 @@ paragraph_25: {
         },
         {
             question: "Что стало формальным поводом для вступления США во Вторую мировую войну?",
-            type: "single",
             answers: [
                 "Нападение Германии на Польшу",
                 "Нападение Японии на Пёрл-Харбор",
@@ -3836,7 +3834,6 @@ paragraph_25: {
         },
         {
             question: "Какая страна, помимо СССР, оставалась способной оказывать сопротивление Германии в Европе к июню 1941 года?",
-            type: "single",
             answers: [
                 "Франция",
                 "Италия",
@@ -3848,7 +3845,6 @@ paragraph_25: {
         },
         {
             question: "Какой документ оформил военный союз Германии, Италии и Японии в 1940 году?",
-            type: "single",
             answers: [
                 "Пакт Молотова – Риббентропа",
                 "Антикоминтерновский пакт",
@@ -3860,7 +3856,6 @@ paragraph_25: {
         },
         {
             question: "Какие из перечисленных стран присоединились к Тройственному пакту?",
-            type: "multiple",
             answers: [
                 "Польша и Чехословакия",
                 "Венгрия и Румыния",
@@ -3868,11 +3863,11 @@ paragraph_25: {
                 "Великобритания и США"
             ],
             correct: [1, 2],
+            multiple: true,
             explanation: "Правильный ответ: Венгрия и Румыния, Словакия и Болгария. Эти страны стали сателлитами Германии."
         },
         {
             question: "Что стало одной из общих целей государств-агрессоров (Германии, Италии, Японии) во Второй мировой войне?",
-            type: "single",
             answers: [
                 "Установление мирового господства",
                 "Распространение коммунистической идеологии",
@@ -3884,7 +3879,6 @@ paragraph_25: {
         },
         {
             question: "Когда начался Освободительный поход Красной армии, приведший к воссоединению Западной Беларуси с БССР?",
-            type: "single",
             answers: [
                 "1 сентября 1939 г.",
                 "17 сентября 1939 г.",
@@ -3896,7 +3890,6 @@ paragraph_25: {
         },
         {
             question: "Где проходило Народное собрание Западной Беларуси в октябре 1939 года?",
-            type: "single",
             answers: [
                 "В Минске",
                 "В Варшаве",
@@ -3908,7 +3901,6 @@ paragraph_25: {
         },
         {
             question: "Какое государственное образование вошло в состав БССР в результате воссоединения 1939 года?",
-            type: "single",
             answers: [
                 "Западная Украина",
                 "Восточная Пруссия",
@@ -3920,7 +3912,6 @@ paragraph_25: {
         },
         {
             question: "Какой современный государственный праздник Беларуси связан с датой 17 сентября 1939 года?",
-            type: "single",
             answers: [
                 "День Победы",
                 "День Независимости",
@@ -3932,7 +3923,6 @@ paragraph_25: {
         },
         {
             question: "На скольких континентах велись непосредственные военные действия во время Второй мировой войны?",
-            type: "single",
             answers: [
                 "На двух",
                 "На трех",
@@ -3944,7 +3934,6 @@ paragraph_25: {
         },
         {
             question: "Какой театр военных действий не выделяется в истории Второй мировой войны согласно тексту?",
-            type: "single",
             answers: [
                 "Восточноевропейский",
                 "Азиатско-тихоокеанский",
@@ -3956,7 +3945,6 @@ paragraph_25: {
         },
         {
             question: "Где, согласно тексту, происходили важнейшие события Второй мировой войны?",
-            type: "single",
             answers: [
                 "На территории Западной Европы и Африки.",
                 "На территории Азии и Тихого океана.",
@@ -3968,7 +3956,6 @@ paragraph_25: {
         },
         {
             question: "В каких странах партизанская и подпольная борьба достигла наибольшего размаха?",
-            type: "multiple",
             answers: [
                 "СССР и Польша",
                 "Франция и Бельгия",
@@ -3976,11 +3963,11 @@ paragraph_25: {
                 "США и Великобритания"
             ],
             correct: [0, 2],
+            multiple: true,
             explanation: "Правильный ответ: СССР и Польша, Югославия и Греция. В этих странах было мощное сопротивление."
         },
         {
             question: "Какое действие НЕ является формой Сопротивления, упомянутой в тексте?",
-            type: "single",
             answers: [
                 "Издание запрещенной литературы.",
                 "Военное содействие оккупантам.",
@@ -3992,7 +3979,6 @@ paragraph_25: {
         },
         {
             question: "Лидером какого марионеточного правительства в оккупированной Норвегии был В. Квислинг?",
-            type: "single",
             answers: [
                 "Правительства национального спасения",
                 "Правительства Виши",
@@ -4004,7 +3990,6 @@ paragraph_25: {
         },
         {
             question: "Кто из перечисленных активно сотрудничал с нацистами после капитуляции своей страны?",
-            type: "single",
             answers: [
                 "Правительство У. Черчилля",
                 "Правительство Ш. де Голля",
@@ -4016,7 +4001,6 @@ paragraph_25: {
         },
         {
             question: "К какой форме коллаборационизма относится создание полицейских формирований для поддержания «нового порядка»?",
-            type: "single",
             answers: [
                 "Военному сотрудничеству",
                 "Политическому сотрудничеству",
@@ -4028,7 +4012,6 @@ paragraph_25: {
         },
         {
             question: "С какого времени коллаборационистские формирования стали привлекаться нацистами для совершения геноцида еврейского населения?",
-            type: "single",
             answers: [
                 "С сентября 1939 г.",
                 "С июня 1941 г.",
@@ -4040,7 +4023,6 @@ paragraph_25: {
         },
         {
             question: "Какая страна, согласно тексту, понесла наибольшие тяготы ведения военных действий во Второй мировой войне?",
-            type: "single",
             answers: [
                 "США",
                 "Великобритания",
@@ -4052,7 +4034,6 @@ paragraph_25: {
         },
         {
             question: "Когда был открыт второй фронт на севере Франции (в Нормандии)?",
-            type: "single",
             answers: [
                 "22 июня 1941 г.",
                 "7 декабря 1941 г.",
@@ -4064,7 +4045,6 @@ paragraph_25: {
         },
         {
             question: "Благодаря чему, согласно тексту, часто удавалось разрешать противоречия между ведущими державами антигитлеровской коалиции?",
-            type: "single",
             answers: [
                 "Благодаря воле их лидеров.",
                 "Благодаря угрозе применения атомного оружия.",
@@ -4076,7 +4056,6 @@ paragraph_25: {
         },
         {
             question: "Какое оружие продемонстрировали США в конце войны, показав его сокрушительные возможности?",
-            type: "single",
             answers: [
                 "Танковые армии",
                 "Реактивные самолеты",
@@ -4088,7 +4067,6 @@ paragraph_25: {
         },
         {
             question: "Где проходил международный судебный процесс над нацистскими преступниками в 1945-1946 гг.?",
-            type: "single",
             answers: [
                 "В Гааге",
                 "В Берлине",
@@ -4100,7 +4078,6 @@ paragraph_25: {
         },
         {
             question: "Какие две страны, согласно тексту, превратились в основных субъектов международной политики после войны?",
-            type: "multiple",
             answers: [
                 "СССР и Великобритания",
                 "США и Великобритания",
@@ -4108,11 +4085,11 @@ paragraph_25: {
                 "СССР и США"
             ],
             correct: [3],
+            multiple: true,
             explanation: "Правильный ответ: СССР и США. Эти две сверхдержавы стали центрами биполярного мира."
         },
         {
             question: "Какой характер приобрело противостояние между СССР и западными странами после Второй мировой войны?",
-            type: "single",
             answers: [
                 "«Горячая» война",
                 "«Странная» война",
@@ -4580,37 +4557,52 @@ function checkMultipleAnswer() {
         selectionCounter.remove();
     }
     
-    const sortedSelected = [...selectedAnswers].sort();
-    const sortedCorrect = [...question.correct].sort();
+    // Проверка, что выбрано правильное количество ответов
+    if (selectedAnswers.length !== maxSelections) {
+        showNotification(`Нужно выбрать ${maxSelections} ответ${maxSelections > 1 ? 'а' : ''}!`, 'warning');
+        return;
+    }
+    
+    // Сортировка для сравнения
+    const sortedSelected = [...selectedAnswers].sort((a, b) => a - b);
+    const sortedCorrect = Array.isArray(question.correct) 
+        ? [...question.correct].sort((a, b) => a - b) 
+        : [question.correct];
     
     const isCorrect = JSON.stringify(sortedSelected) === JSON.stringify(sortedCorrect);
     
     userAnswers.push({
         question: question.question,
         userAnswer: selectedAnswers.map(idx => question.answers[idx]).join(', '),
-        correctAnswer: question.correct.map(idx => question.answers[idx]).join(', '),
+        correctAnswer: (Array.isArray(question.correct) ? question.correct : [question.correct])
+            .map(idx => question.answers[idx]).join(', '),
         isCorrect: isCorrect
     });
     
+    // Деактивируем все кнопки
     answerButtons.forEach(btn => {
         btn.classList.add('disabled');
         btn.onclick = null;
     });
     
+    // Показываем правильные и неправильные ответы
     answerButtons.forEach((btn, index) => {
-        if (question.correct.includes(index)) {
-            btn.classList.add('correct');
-            if (btn.querySelector('.answer-checkmark')) {
-                btn.querySelector('.answer-checkmark').textContent = '✓';
+        if (Array.isArray(question.correct)) {
+            if (question.correct.includes(index)) {
+                btn.classList.add('correct');
+            } else if (selectedAnswers.includes(index)) {
+                btn.classList.add('incorrect');
             }
-        } else if (selectedAnswers.includes(index)) {
-            btn.classList.add('incorrect');
-            if (btn.querySelector('.answer-checkmark')) {
-                btn.querySelector('.answer-checkmark').textContent = '✗';
+        } else {
+            if (index === question.correct) {
+                btn.classList.add('correct');
+            } else if (selectedAnswers.includes(index)) {
+                btn.classList.add('incorrect');
             }
         }
     });
     
+    // Показываем результат
     if (isCorrect) {
         feedback.textContent = `✅ Правильно! +1 балл`;
         feedback.className = 'quiz-feedback correct';
@@ -4623,6 +4615,10 @@ function checkMultipleAnswer() {
         explanation.textContent = question.explanation;
         explanation.style.display = 'block';
     }
+    
+    // Показываем кнопку "Следующий вопрос"
+    document.getElementById('next-btn').style.display = 'block';
+}
     
     document.getElementById('next-btn').style.display = 'block';
 }
