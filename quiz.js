@@ -4359,6 +4359,7 @@ function showQuestion() {
     maxSelections = isMultipleSelection ? question.correct.length : 1;
     
     if (isMultipleSelection) {
+        // Добавляем счетчик выбора
         const selectionCounter = document.createElement('div');
         selectionCounter.id = 'selection-counter';
         selectionCounter.style.cssText = `
@@ -4371,6 +4372,25 @@ function showQuestion() {
         selectionCounter.textContent = `Выберите ${maxSelections} ответ${maxSelections > 1 ? 'а' : ''}`;
         
         answersContainer.parentNode.insertBefore(selectionCounter, answersContainer);
+        
+        // Добавляем кнопку проверки
+        const checkButton = document.createElement('button');
+        checkButton.id = 'check-multiple-btn';
+        checkButton.className = 'luxury-btn btn-primary';
+        checkButton.style.cssText = `
+            margin: 1rem auto;
+            display: none;
+        `;
+        checkButton.innerHTML = '<span>Проверить ответ</span>';
+        checkButton.onclick = () => {
+            if (selectedAnswers.length === maxSelections) {
+                checkMultipleAnswer();
+            } else {
+                showNotification(`Выберите ${maxSelections} ответ${maxSelections > 1 ? 'а' : ''}!`, 'warning');
+            }
+        };
+        
+        answersContainer.parentNode.insertBefore(checkButton, answersContainer.nextSibling);
     }
     
     question.answers.forEach((answer, index) => {
@@ -4395,8 +4415,8 @@ function showQuestion() {
     }
 
     nextBtn.style.display = 'none';
-    document.getElementById ( 'quiz-feedback').style.display = 'none';
-    document.getElementById ( 'answer-explanation').style.display = 'none';
+    document.getElementById('quiz-feedback').style.display = 'none';
+    document.getElementById('answer-explanation').style.display = 'none';
 }
 
 function updateClockHint(question) {
@@ -4512,6 +4532,7 @@ function updateClockHint(question) {
 function selectAnswer(selectedIndex) {
     const question = currentQuiz.questions[currentQuestion];
     const answerButtons = document.querySelectorAll('.answer-btn');
+    const checkButton = document.getElementById('check-multiple-btn');
     
     if (isMultipleSelection) {
         const index = selectedAnswers.indexOf(selectedIndex);
@@ -4528,6 +4549,21 @@ function selectAnswer(selectedIndex) {
                 return;
             }
         }
+        
+        updateSelectionCounter();
+        
+        // Показываем кнопку проверки, когда выбрано нужное количество
+        if (checkButton) {
+            if (selectedAnswers.length === maxSelections) {
+                checkButton.style.display = 'block';
+            } else {
+                checkButton.style.display = 'none';
+            }
+        }
+    } else {
+        checkSingleAnswer(selectedIndex);
+    }
+}
         
         updateSelectionCounter();
         
@@ -4552,34 +4588,35 @@ function checkMultipleAnswer() {
     const feedback = document.getElementById('quiz-feedback');
     const explanation = document.getElementById('answer-explanation');
     
+    // Удаляем счетчик выбора
     const selectionCounter = document.getElementById('selection-counter');
     if (selectionCounter) {
         selectionCounter.remove();
     }
     
-    // Проверка, что выбрано правильное количество ответов
+    // Проверяем, что выбрано нужное количество ответов
     if (selectedAnswers.length !== maxSelections) {
-        showNotification(`Нужно выбрать ${maxSelections} ответ${maxSelections > 1 ? 'а' : ''}!`, 'warning');
+        showNotification(`Выберите ${maxSelections} ответ${maxSelections > 1 ? 'а' : ''} для проверки!`, 'warning');
         return;
     }
     
-    // Сортировка для сравнения
+    // Сортируем для сравнения
     const sortedSelected = [...selectedAnswers].sort((a, b) => a - b);
-    const sortedCorrect = Array.isArray(question.correct) 
-        ? [...question.correct].sort((a, b) => a - b) 
-        : [question.correct];
+    const sortedCorrect = [...question.correct].sort((a, b) => a - b);
     
-    const isCorrect = JSON.stringify(sortedSelected) === JSON.stringify(sortedCorrect);
+    // Проверяем правильность
+    const isCorrect = sortedSelected.length === sortedCorrect.length && 
+                     sortedSelected.every((value, index) => value === sortedCorrect[index]);
     
+    // Сохраняем ответ
     userAnswers.push({
         question: question.question,
         userAnswer: selectedAnswers.map(idx => question.answers[idx]).join(', '),
-        correctAnswer: (Array.isArray(question.correct) ? question.correct : [question.correct])
-            .map(idx => question.answers[idx]).join(', '),
+        correctAnswer: question.correct.map(idx => question.answers[idx]).join(', '),
         isCorrect: isCorrect
     });
     
-    // Деактивируем все кнопки
+    // Отключаем все кнопки
     answerButtons.forEach(btn => {
         btn.classList.add('disabled');
         btn.onclick = null;
@@ -4587,18 +4624,10 @@ function checkMultipleAnswer() {
     
     // Показываем правильные и неправильные ответы
     answerButtons.forEach((btn, index) => {
-        if (Array.isArray(question.correct)) {
-            if (question.correct.includes(index)) {
-                btn.classList.add('correct');
-            } else if (selectedAnswers.includes(index)) {
-                btn.classList.add('incorrect');
-            }
-        } else {
-            if (index === question.correct) {
-                btn.classList.add('correct');
-            } else if (selectedAnswers.includes(index)) {
-                btn.classList.add('incorrect');
-            }
+        if (question.correct.includes(index)) {
+            btn.classList.add('correct');
+        } else if (selectedAnswers.includes(index)) {
+            btn.classList.add('incorrect');
         }
     });
     
@@ -4617,9 +4646,6 @@ function checkMultipleAnswer() {
     }
     
     // Показываем кнопку "Следующий вопрос"
-    document.getElementById('next-btn').style.display = 'block';
-}
-    
     document.getElementById('next-btn').style.display = 'block';
 }
 
